@@ -1,0 +1,35 @@
+/************/
+/* variables */
+:root {
+  --dark-primary-color: #03045e;
+  --primary-color: #0077b6;
+  --secondary-color: #457b9d;
+  --baby-blue-color: #a8dadc;
+  --light-color: #f1faee;
+  --white-color: #ffffff;
+  --red-color: #e63946;
+}
+
+/************/
+/* for all elements */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* color: var(--dark-primary-color) */
+}
+
+/************/
+/* html, body */
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: "Noto Naskh Arabic", "Acme", serif;
+  /* font-family: "Acme",  sans-serif; */
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+}

@@ -88,8 +88,8 @@ function get_page_dependencies($page_role, $file_type)
       'fonts' => []
     ],
     
-    // for dashboard files
-    'dashboard' => [
+    // for units files
+    'units' => [
       'css' => [
         '1' => 'units.css'
       ],

@@ -5,7 +5,9 @@
  */
 function units($phrase)
 {
-  static $lang = array();
+  static $lang = array(
+    'UNITS' => 'الوحدات'
+  );
   // return the phrase
   return $lang[$phrase];
 }

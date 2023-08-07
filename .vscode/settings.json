@@ -6,10 +6,10 @@
 	"html.suggest.html5": true,
 	"html.autoClosingTags": true,
 	"[php]": {
-		"editor.defaultFormatter": "Sophisticode.php-formatter"
+		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
 	},
 	"[css]": {
-		"editor.defaultFormatter": "vscode.css-language-features"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[javascript]": {
 		"editor.defaultFormatter": "vscode.typescript-language-features"

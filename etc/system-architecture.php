@@ -1,16 +1,22 @@
 <?php
+
 /**
  * 
  */
-function get_page_dependencies($page_role, $file_type) {
+function get_page_dependencies($page_role, $file_type)
+{
   // website files
   $project_files_archeticture = [
     // global files
     'global' => [
       'css' => [
         '1' => 'global.css',
+        '2' => 'sidebar-menu.css'
       ],
-      'js' => [],
+      'js' => [
+        '1' => 'global.js',
+        '2' => 'sidebar-menu.js'
+      ],
       'node' => [
         'css' => [
           '1' => 'bootstrap/dist/css/bootstrap.min.css',
@@ -18,7 +24,7 @@ function get_page_dependencies($page_role, $file_type) {
         ],
         'js' => [
           '1' => 'jquery/dist/jquery.min.js',
-          '2' => 'bootstrap/dist/js/bootstrap.min.js',
+          '2' => 'bootstrap/dist/js/bootstrap.bundle.min.js',
         ]
       ],
       'fonts' => [
@@ -54,8 +60,8 @@ function get_page_dependencies($page_role, $file_type) {
       ],
       'fonts' => []
     ],
-    
-    
+
+
     // for login files
     'login' => [
       'css' => [
@@ -68,9 +74,22 @@ function get_page_dependencies($page_role, $file_type) {
       ],
       'fonts' => []
     ],
-    
-    
-    
+
+    // for dashboard files
+    'dashboard' => [
+      'css' => [
+        '1' => 'dashboard.css'
+      ],
+      'js' => [],
+      'node' => [
+        'css' => [],
+        'js' => []
+      ],
+      'fonts' => []
+    ],
+
+
+
   ];
   // returns files of the given page role
   return $project_files_archeticture[$page_role][$file_type];

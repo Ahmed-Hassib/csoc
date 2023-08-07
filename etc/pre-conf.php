@@ -3,15 +3,11 @@
 // connect to database from configration file
 require_once 'conf.php';
 // developer name
-$developerName = "ahmed hassib";
-// sponsor company
-$sponsorCompany = "leader group";
+$developer_name = "ahmed hassib";
 // company name
-$appName = "sys tree";
+$appName = "csoc";
 // is app suspended
-$isDeveloping = false;
-// get user version of system
-$curr_version = isset($_SESSION['curr_version_name']) ? $_SESSION['curr_version_name'] : "v1.0.3";
+$is_developin = false;
 
 // include routes file
 require_once "app-routes.php";            // get all routes

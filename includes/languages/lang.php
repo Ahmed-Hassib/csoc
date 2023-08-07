@@ -2,7 +2,7 @@
 // all language files
 $lang_files = [
     'global',
-    'login', 'dashboard'
+    'login', 'dashboard', 'units'
 ];
 
 // loop on language files

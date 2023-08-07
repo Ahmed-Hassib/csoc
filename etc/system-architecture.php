@@ -87,6 +87,19 @@ function get_page_dependencies($page_role, $file_type)
       ],
       'fonts' => []
     ],
+    
+    // for dashboard files
+    'dashboard' => [
+      'css' => [
+        '1' => 'units.css'
+      ],
+      'js' => [],
+      'node' => [
+        'css' => [],
+        'js' => []
+      ],
+      'fonts' => []
+    ],
 
 
 

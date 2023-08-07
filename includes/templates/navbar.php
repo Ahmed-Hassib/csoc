@@ -1,9 +1,7 @@
 <!-- start sidebar menu -->
 <div class="sidebar-menu sidebar-menu-right close">
   <!-- start sidebar menu brand -->
-  <div class="sidebar-menu-brand" href="dashboard.php" <?php if (!isset($_SESSION['user_id'])) {
-                                                          echo "style='margin: auto'";
-                                                        } ?>>
+  <div class="sidebar-menu-brand" >
     <img src="<?php echo $assets . "air-defence-logo-2.png" ?>" class="sidebar-menu-logo-img" alt="<?php echo isset($_SESSION['company_name']) ? $_SESSION['company_name'] : lang('NOT ASSIGNED') ?>" id="company-img-brand">
     <!-- <img  src="<?php echo $assets ?>jsl.jpeg" > -->
     <span class="sidebar-menu-logo-name text-uppercase ">csoc 830</span>
@@ -24,6 +22,23 @@
         <li>
           <a href="<?php echo $nav_up_level ?>dashboard/index.php">
             <span class="link-name"><?php echo lang('DASHBOARD') ?></span>
+          </a>
+        </li>
+      </ul>
+      <!-- end blank sub menu -->
+    </li>
+    <!-- end dashboard page link -->
+    <!-- start dashboard page link -->
+    <li>
+      <a href="<?php echo $nav_up_level ?>units/index.php">
+        <i class="bi bi-grid"></i>
+        <span class="link-name"><?php echo lang('UNITS') ?></span>
+      </a>
+      <!-- start blank sub menu -->
+      <ul class="sub-menu blank">
+        <li>
+          <a href="<?php echo $nav_up_level ?>units/index.php">
+            <span class="link-name"><?php echo lang('UNITS') ?></span>
           </a>
         </li>
       </ul>

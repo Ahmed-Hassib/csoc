@@ -2,7 +2,7 @@
 
 // array of used classes to include_once it
 $classes_arr = [
-    'Database'
+    'Database', 'Session'
 ];
 
 // up level

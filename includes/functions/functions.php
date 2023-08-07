@@ -6,7 +6,8 @@
  * Contain global variable can be access from anywhere
  * get title page from the page and display it
  */
-function get_page_tilte($file) {
+function get_page_tilte($file)
+{
   global $page_title; // page title
   // check if set or not
   if (isset($page_title)) {

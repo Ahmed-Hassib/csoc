@@ -29,12 +29,27 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
   if ($query == 'manage') {
     $file_name = 'dashboard.php';
   }
+} else {
+  $file_name = null;
 }
 
 // initial configration of system
 include_once str_repeat("../", $level) . "etc/init.php";
-// include file
-include_once $file_name;
+
+// check file name
+if ($file_name == null) {
+  // prepare flash session variables
+  $_SESSION['flash_message'] = 'ACCESS FAILED';
+  $_SESSION['flash_message_icon'] = 'bi-exclamation-triangle-fill';
+  $_SESSION['flash_message_class'] = 'danger';
+  $_SESSION['flash_message_status'] = false;
+  $_SESSION['flash_message_lang_file'] = 'global_';
+  // redirect back
+  redirect_home(null, $up_level . 'index.php', 0);
+} else {
+  // include file
+  include_once $file_name;
+}
 
 // include js files
 include_once $tpl . "js-includes.php";

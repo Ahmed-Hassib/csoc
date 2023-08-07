@@ -4,9 +4,7 @@
   <div class="sidebar-menu-brand" href="dashboard.php" <?php if (!isset($_SESSION['user_id'])) {
                                                           echo "style='margin: auto'";
                                                         } ?>>
-    <img src="<?php echo $assets . "air-defence-logo-2.png" ?>" class="sidebar-menu-logo-img"
-      alt="<?php echo isset($_SESSION['company_name']) ? $_SESSION['company_name'] : lang('NOT ASSIGNED') ?>"
-      id="company-img-brand">
+    <img src="<?php echo $assets . "air-defence-logo-2.png" ?>" class="sidebar-menu-logo-img" alt="<?php echo isset($_SESSION['company_name']) ? $_SESSION['company_name'] : lang('NOT ASSIGNED') ?>" id="company-img-brand">
     <!-- <img  src="<?php echo $assets ?>jsl.jpeg" > -->
     <span class="sidebar-menu-logo-name text-uppercase ">csoc 830</span>
     <!-- close icon displayed in small screens -->

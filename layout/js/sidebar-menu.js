@@ -10,6 +10,9 @@ let arrows_down = document.querySelectorAll(".icon-link");
 // close sidenavbar button
 let close_btn = document.querySelector("span.close-btn");
 
+// flash message container
+let flash_alert_container = document.querySelector('.alert-flash-container');
+
 // check close button
 if (close_btn != null) {
   close_btn.addEventListener("click", evt => {
@@ -60,6 +63,10 @@ if (sidebar_menubtn != null) {
 function open_close_sidebar() {
   // toggle on close class
   sidebar.classList.toggle("close");
+  // check if alert flash message != null
+  if (flash_alert_container != null) {
+    flash_alert_container.classList.toggle('menu-open')
+  }
   // update session value
   localStorage['sidebarMenuClosed'] = check_sidebar_action();
 }
@@ -75,11 +82,25 @@ function restore_sidebar() {
   // and side bar contains close class or not
   if (localStorage['sidebarMenuClosed'] !== 'false') {
     sidebar.classList.add("close");
+    console.log('menu not opend')
+    change_flash_alert_position(false);
   } else {
     sidebar.classList.remove("close");
+    change_flash_alert_position(true);
   }
 }
 
+// change style of flash message alert
+function change_flash_alert_position(is_opend) {
+  if (flash_alert_container != null) {
+    // check if menu opened
+    if (is_opend) {
+      flash_alert_container.classList.add('menu-open')
+    } else {
+      flash_alert_container.classList.remove('menu-open')
+    }
+  }
+}
 
 // get all menu that have sub menu
 let sub_menu_containers = document.querySelectorAll(".nav-links li .icon-link .bi-arrow-down-short")

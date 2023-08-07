@@ -40,3 +40,7 @@
     <link rel="stylesheet" href="<?php echo $css . $css_file; ?>">
   <?php } ?>
 <?php } ?>
+
+
+<!-- PAGE ICON -->
+<link rel="icon" href="<?php echo $assets ?>air-defence-logo-2.png">

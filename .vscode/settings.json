@@ -1,13 +1,10 @@
 {
 	"editor.formatOnPaste": true,
 	"php-cs-fixer.allowRisky": true,
-	"editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
 	"editor.linkedEditing": true,
 	"html.suggest.html5": true,
 	"html.autoClosingTags": true,
-	"[php]": {
-		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-	},
+	"[php]": {},
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},

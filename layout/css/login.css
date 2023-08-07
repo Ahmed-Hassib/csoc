@@ -1,78 +1,73 @@
 /************/
-.loginPageContainer {
-  padding: 1rem 0.5rem;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: #457b9d;
+.login_container {
+	padding: 1rem 0.5rem;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #457b9d;
 }
 
-.contentBox {
-  padding: 2rem 1.5rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  min-height: 350px;
-  background-color: var(--white-color);
-  border-radius: 16px;
-  box-shadow: 4px 4px 8px #000;
+.content_box {
+	padding: 2rem 1.5rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	min-height: 350px;
+	background-color: var(--white-color);
+	border-radius: 16px;
+	box-shadow: 4px 4px 8px #000;
 }
 
-.contentBox>.formBox {
-  position: relative;
-  width: 100%;
+.content_box .avatar_container {
+	position: relative;
+	width: 100%;
 }
 
-.contentBox .formBox .formBoxAvatar {
-  position: absolute;
-  top: -40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.content_box .avatar_container .avatar_box {
+	position: absolute;
+	top: -50px;
+		left: 50%;
+		transform: translate(-50%, -50%);
 }
 
-.contentBox .formBox .formBoxAvatar .bi {
-  font-size: 150px;
+.content_box .avatar_container .avatar_box .bi {
+	font-size: 150px;
 }
 
-.contentBox .formBox .formBoxAvatar img {
-  width: 150px;
+.content_box .avatar_container .avatar_box .bi::before {
+	background: #457b9d;
+	padding: 0.5rem;
+	border-radius: 50%;
+	color: var(--white-color);
 }
 
-.contentBox .formBox .formBoxAvatar .bi-person-circle::before {
-  background: #457b9d;
-  padding: 0.5rem;
-  border-radius: 50%;
-  color: var(--white-color);
+.content_box .login_form {
+	position: relative;
+	margin-top: 4rem;
 }
 
-.contentBox .formBox .login-form {
-  position: relative;
-  margin-top: 50px;
+.content_box .login_form button[type="submit"] {
+	background: var(--primary-color);
+	color: var(--white-color);
 }
 
-.contentBox .formBox .login-form button[type="submit"] {
-  background: var(--primary-color);
-  color: var(--white-color);
-}
-
-
-.contentBox .formBox .login-form .show-pass {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translate(-50%, 20%);
-  cursor: pointer;
+.content_box .login_form .show-pass {
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	transform: translate(-50%, -50%);
+		cursor: pointer;
 }
 
 .astrisk {
-  position: absolute;
-  top: 10%;
-  left: 10px;
+	position: absolute;
+		top: 10%;
+		left: 10px;
 }
 
 .btn-close-alert {
-  position: absolute;
-  left: 5%;
+	position: absolute;
+		left: 5%;
 }

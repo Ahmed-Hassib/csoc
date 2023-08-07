@@ -5,10 +5,6 @@ ob_start();
 session_start();
 // regenerate session id
 session_regenerate_id();
-// get language from get method
-$lang = isset($_GET['lang']) ? $_GET['lang'] : "ar";
-// check language
-@$_SESSION['systemLang'] = $lang;
 // page title
 $page_title = "login";
 // page role
@@ -25,16 +21,20 @@ $nav_level = 0;
 $lang_file = "login";
 // pre configration of system
 include_once str_repeat("../", $level) . "etc/pre-conf.php";
-// initial configration of system
-include_once str_repeat("../", $level) . "etc/init.php";
 
 // check if user comming from http request ..
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // include code of process data
-
+  $file_name = $src . "login/process.php";
 } else {
   // include login content
-  include_once $src . "login/index.php";
+  $file_name = $src . "login/index.php";
 }
 
-?>
+// initial configration of system
+include_once str_repeat("../", $level) . "etc/init.php";
+// include file
+include_once $file_name;
+
+// include js files
+include_once $tpl . "js-includes.php";

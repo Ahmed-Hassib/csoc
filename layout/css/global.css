@@ -41,6 +41,11 @@ body[dir="rtl"] .form-floating > label {
 }
 
 /************/
+.fs-12 {
+	font-size: 12px !important;
+}
+
+/************/
 .preloader {
 	position: fixed;
 	width: 100vw;
@@ -149,4 +154,20 @@ header.header h3 {
 
 .astrisk-right {
 	right: 45px;
+}
+
+/************/
+.card-buttons {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+
+.card-buttons .btn {
+	font-size: 12px;
+	padding: 5px 10px;
+}
+
+.card-buttons .btn:first-child {
+	grid-column: 2/3;
 }

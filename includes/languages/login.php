@@ -8,6 +8,7 @@ function login($phrase) {
     'USERNAME'  => 'اسم المستخدم',
     'PASSWORD'  => 'كلمة المرور',
     'LOGIN'     => 'تسجيل الدخول',
+    'LOGOUT'    => 'خروج',
 
     'LOGIN SUCCESS' => 'تسجيل دخول ناجح',
     'LOGIN FAILED'  => 'فشلت عملية تسجيل الدخول',

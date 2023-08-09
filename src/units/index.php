@@ -32,6 +32,15 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
   } elseif ($query == 'add-new-unit') {
     // add new unit file
     $file_name = 'add-new-unit.php';
+  } elseif ($query == 'insert-unit') {
+    // insert unit file
+    $file_name = 'insert-unit.php';
+  } elseif ($query == 'edit-unit') {
+    // edit unit file
+    $file_name = 'edit-unit.php';
+  } elseif ($query == 'update-unit') {
+    // update unit file
+    $file_name = 'update-unit.php';
   } else {
     // null for access denied
     $file_name = null;

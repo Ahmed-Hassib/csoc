@@ -38,6 +38,7 @@ arrows_down.forEach((el) => {
           break;
 
         default:
+          li_el = parent_el;
           break;
       }
       // add show-menu class to li element

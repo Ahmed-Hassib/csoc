@@ -28,7 +28,7 @@
       <!-- end blank sub menu -->
     </li>
     <!-- end dashboard page link -->
-    <!-- start dashboard page link -->
+    <!-- start units page link -->
     <li>
       <div class="icon-link">
         <section>
@@ -52,7 +52,32 @@
       </ul>
       <!-- end blank sub menu -->
     </li>
-    <!-- end dashboard page link -->
+    <!-- end units page link -->
+    <!-- start soldiers page link -->
+    <li>
+      <div class="icon-link">
+        <section>
+          <i class="bi bi-people"></i>
+          <span class="link-name"><?php echo lang('SOLDIERS') ?></span>
+        </section>
+        <i class="bi bi-arrow-down-short"></i>
+      </div>
+      <!-- start blank sub menu -->
+      <ul class="sub-menu">
+        <li>
+          <a href="<?php echo $nav_up_level ?>soldiers/index.php">
+            <span class="link-name"><?php echo lang('DASHBOARD') ?></span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo $nav_up_level ?>soldiers/index.php?do=add-new-soldier">
+            <span class="link-name"><?php echo lang('ADD SOLDIER') ?></span>
+          </a>
+        </li>
+      </ul>
+      <!-- end blank sub menu -->
+    </li>
+    <!-- end soldiers page link -->
   </ul>
   <!-- end sidebar menu content -->
 </div>
@@ -70,11 +95,11 @@
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <?php echo $_SESSION['username'] ?>
         </a>
-        <ul class="dropdown-menu-end dropdown-menu">
+        <ul class="dropdown-menu-end dropdown-menu text-end">
           <li>
             <a class="dropdown-item" href="<?php echo $src ?>logout.php">
               <i class="bi bi-box-arrow-right"></i>
-              logout
+              <span><?php echo lang('LOGOUT', 'login') ?></span>
             </a>
           </li>
         </ul>

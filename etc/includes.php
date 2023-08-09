@@ -2,7 +2,8 @@
 
 // array of used classes to include_once it
 $classes_arr = [
-    'Database', 'Session'
+    'Database', 'Session',
+    'Unit',
 ];
 
 // up level
@@ -16,7 +17,8 @@ foreach ($classes_arr as $class) {
     include_once $up_level . "classes/$class.class.php";
 }
 
-function get_up_level($level) {
+function get_up_level($level)
+{
     // get up level depebding on current level
     $up_level = $level > 0 ? str_repeat("../", $level) : "./";
     // return $up_level

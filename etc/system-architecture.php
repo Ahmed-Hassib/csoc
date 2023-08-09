@@ -101,6 +101,19 @@ function get_page_dependencies($page_role, $file_type)
       'fonts' => []
     ],
 
+    // for soldiers files
+    'soldiers' => [
+      'css' => [
+        '1' => 'soldiers.css'
+      ],
+      'js' => [],
+      'node' => [
+        'css' => [],
+        'js' => []
+      ],
+      'fonts' => []
+    ],
+
 
 
   ];

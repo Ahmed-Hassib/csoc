@@ -27,9 +27,17 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
   $query = isset($_GET['do']) && !empty($_GET['do']) ? $_GET['do'] : 'manage';
   // check query 
   if ($query == 'manage') {
+    // dashboard file
     $file_name = 'dashboard.php';
+  } elseif ($query == 'add-new-unit') {
+    // add new unit file
+    $file_name = 'add-new-unit.php';
+  } else {
+    // null for access denied
+    $file_name = null;
   }
 } else {
+  // null for access denied
   $file_name = null;
 }
 
@@ -37,7 +45,7 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
 include_once str_repeat("../", $level) . "etc/init.php";
 
 // check file name
-if ($file_name == null) {
+if ($file_name === null) {
   // prepare flash session variables
   $_SESSION['flash_message'] = 'ACCESS FAILED';
   $_SESSION['flash_message_icon'] = 'bi-exclamation-triangle-fill';
@@ -45,7 +53,7 @@ if ($file_name == null) {
   $_SESSION['flash_message_status'] = false;
   $_SESSION['flash_message_lang_file'] = 'global_';
   // redirect back
-  redirect_home(null, $up_level . 'index.php', 0);
+  redirect_home(null, 'back', 0);
 } else {
   // include file
   include_once $file_name;

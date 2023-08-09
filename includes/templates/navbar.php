@@ -1,7 +1,7 @@
 <!-- start sidebar menu -->
 <div class="sidebar-menu sidebar-menu-right close">
   <!-- start sidebar menu brand -->
-  <div class="sidebar-menu-brand" >
+  <div class="sidebar-menu-brand">
     <img src="<?php echo $assets . "air-defence-logo-2.png" ?>" class="sidebar-menu-logo-img" alt="<?php echo isset($_SESSION['company_name']) ? $_SESSION['company_name'] : lang('NOT ASSIGNED') ?>" id="company-img-brand">
     <!-- <img  src="<?php echo $assets ?>jsl.jpeg" > -->
     <span class="sidebar-menu-logo-name text-uppercase ">csoc 830</span>
@@ -30,15 +30,23 @@
     <!-- end dashboard page link -->
     <!-- start dashboard page link -->
     <li>
-      <a href="<?php echo $nav_up_level ?>units/index.php">
-        <i class="bi bi-grid"></i>
-        <span class="link-name"><?php echo lang('UNITS') ?></span>
-      </a>
+      <div class="icon-link">
+        <section>
+          <i class="bi bi-grid"></i>
+          <span class="link-name"><?php echo lang('UNITS') ?></span>
+        </section>
+        <i class="bi bi-arrow-down-short"></i>
+      </div>
       <!-- start blank sub menu -->
-      <ul class="sub-menu blank">
+      <ul class="sub-menu">
         <li>
           <a href="<?php echo $nav_up_level ?>units/index.php">
-            <span class="link-name"><?php echo lang('UNITS') ?></span>
+            <span class="link-name"><?php echo lang('DASHBOARD') ?></span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo $nav_up_level ?>units/index.php?do=add-new-unit">
+            <span class="link-name"><?php echo lang('ADD UNIT') ?></span>
           </a>
         </li>
       </ul>

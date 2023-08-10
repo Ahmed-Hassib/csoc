@@ -15,7 +15,8 @@ function get_page_dependencies($page_role, $file_type)
       ],
       'js' => [
         '1' => 'global.js',
-        '2' => 'sidebar-menu.js'
+        '2' => 'sidebar-menu.js',
+        '3' => 'validation.js'
       ],
       'node' => [
         'css' => [

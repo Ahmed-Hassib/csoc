@@ -53,6 +53,31 @@
       <!-- end blank sub menu -->
     </li>
     <!-- end units page link -->
+    <!-- start specializations page link -->
+    <li>
+      <div class="icon-link">
+        <section>
+          <i class="bi bi-grid"></i>
+          <span class="link-name"><?php echo lang('SPECIALIZATIONS') ?></span>
+        </section>
+        <i class="bi bi-arrow-down-short"></i>
+      </div>
+      <!-- start blank sub menu -->
+      <ul class="sub-menu">
+        <li>
+          <a href="<?php echo $nav_up_level ?>specializations/index.php">
+            <span class="link-name"><?php echo lang('DASHBOARD') ?></span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo $nav_up_level ?>specializations/index.php?do=add-new-specialization">
+            <span class="link-name"><?php echo lang('ADD SPECIALIZATION') ?></span>
+          </a>
+        </li>
+      </ul>
+      <!-- end blank sub menu -->
+    </li>
+    <!-- end specializations page link -->
     <!-- start soldiers page link -->
     <li>
       <div class="icon-link">

@@ -19,15 +19,41 @@ $level = 2;
 $nav_level = 1;
 // language file
 $lang_file = "soldiers";
-// pre configration of system
-include_once str_repeat("../", $level) . "etc/pre-conf.php";
 // check session
 if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
-  
+  // check if Get request do is set or not
+  $query = isset($_GET['do']) && !empty($_GET['do']) ? $_GET['do'] : 'manage';
+  // check query 
+  if ($query == 'manage') {
+    // dashboard file
+    $file_name = 'dashboard.php';
+    $is_contain_table = true;
+  } elseif ($query == 'add-new-soldier') {
+    // add-new-soldier file
+    $file_name = 'add-new-soldier.php';
+  } elseif ($query == 'insert-soldier') {
+    // insert-soldier file
+    $file_name = 'insert-soldier.php';
+  } elseif ($query == 'edit-soldier') {
+    // edit-soldier file
+    $file_name = 'edit-soldier.php';
+  } elseif ($query == 'update-soldier') {
+    // update-soldier file
+    $file_name = 'update-soldier.php';
+  } elseif ($query == 'delete-soldier') {
+    // delete-soldier file
+    $file_name = 'delete-soldier.php';
+  } else {
+    // null for access denied
+    $file_name = null;
+  }
 } else {
   // null for access denied
   $file_name = null;
 }
+
+// pre configration of system
+include_once str_repeat("../", $level) . "etc/pre-conf.php";
 
 // initial configration of system
 include_once str_repeat("../", $level) . "etc/init.php";

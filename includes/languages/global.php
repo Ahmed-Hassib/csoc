@@ -20,19 +20,24 @@ function global_($phrase)
     'DEGREE/RANK'   => 'درجة/رتبة',
 
     // navbar words
-    'SECOND'          => 'ثانية',
-    'REFRESH SESSION' => 'تحديث الجلسة',
-    'DASHBOARD'       => 'الصفحة الرئيسية',
-    'UNITS'           => 'الوحدات',
-    'ADD UNIT'        => 'اضافة وحدة جديدة',
-    'SOLDIERS'        => 'الجنود',
-    'ADD SOLDIER'     => 'اضافة جندى جديد',
+    'SECOND'                  => 'ثانية',
+    'REFRESH SESSION'         => 'تحديث الجلسة',
+    'DASHBOARD'               => 'الصفحة الرئيسية',
+    'UNITS'                   => 'الوحدات',
+    'ADD UNIT'                => 'اضافة وحدة جديدة',
+    'SOLDIERS'                => 'الجنود',
+    'ADD SOLDIER'             => 'اضافة جندى جديد',
+    'SPECIALIZATIONS'         => 'التخصصات',
+    'ADD SPECIALIZATION'      => 'اضافة تخصص جديد',
 
     // global messages
     'REDIRECT AUTO'     => 'سيتم اعادة تحويلك تلقائيا بعد',
     'ACCESS FAILED'     => 'لايمكن الدخول لهذة الصفحة',
     'NO DATA'           => 'لا توجد بيانات للعرض',
     'QUERY PROBLEM'     => 'حدثت مشكلة اثناء حفظ البيانات',
+
+    // tables words
+    'CONTROL'   => 'الاجراء',
 
   );
   // return the phrase

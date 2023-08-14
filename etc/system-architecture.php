@@ -88,13 +88,15 @@ function get_page_dependencies($page_role, $file_type)
       ],
       'fonts' => []
     ],
-    
+
     // for units files
     'units' => [
       'css' => [
         '1' => 'units.css'
       ],
-      'js' => [],
+      'js' => [
+        '1' => 'units.js'
+      ],
       'node' => [
         'css' => [],
         'js' => []
@@ -108,6 +110,21 @@ function get_page_dependencies($page_role, $file_type)
         '1' => 'soldiers.css'
       ],
       'js' => [],
+      'node' => [
+        'css' => [],
+        'js' => []
+      ],
+      'fonts' => []
+    ],
+
+    // for specializations files
+    'specializations' => [
+      'css' => [
+        '1' => 'specializations.css'
+      ],
+      'js' => [
+        '1' => 'specializations.js'
+      ],
       'node' => [
         'css' => [],
         'js' => []

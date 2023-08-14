@@ -1,0 +1,53 @@
+/** FOR GLOBAL IN SOLDIERS PAGES **/
+.spec-content {
+	position: relative;
+}
+
+/** FOR ADD NEW PAGE **/
+.spec-content .form-content {
+	position: relative;
+}
+
+.spec-content .form-content header {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.spec-content .form-content header::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  width: 150px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.form-content .section-content {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px 10px;
+}
+
+.spec-content .section-content :nth-child(2) {
+  grid-column: 2/4;
+}
+
+.spec-content .section-content textarea {
+  /* height: 200px; */
+  resize: none;
+}
+
+.spec-content .section-content .spec-buttons {
+  margin: 1rem 0 1rem auto;
+}
+
+.spec-content .form-buttons {
+	position: relative;
+	margin: 1rem 0;
+	text-align: end;
+}
+
+.spec-content .form-buttons .btn {
+	min-width: 100px;
+}

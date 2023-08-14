@@ -3,6 +3,7 @@
 // array of used classes to include_once it
 $classes_arr = [
     'Database', 'Session',
+    'specialization',
     'Unit', 'Soldier'
 ];
 

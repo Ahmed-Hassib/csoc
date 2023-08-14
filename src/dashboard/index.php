@@ -19,8 +19,6 @@ $level = 2;
 $nav_level = 1;
 // language file
 $lang_file = "dashboard";
-// pre configration of system
-include_once str_repeat("../", $level) . "etc/pre-conf.php";
 // check session
 if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
   // check if Get request do is set or not
@@ -32,6 +30,9 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
 } else {
   $file_name = null;
 }
+
+// pre configration of system
+include_once str_repeat("../", $level) . "etc/pre-conf.php";
 
 // initial configration of system
 include_once str_repeat("../", $level) . "etc/init.php";

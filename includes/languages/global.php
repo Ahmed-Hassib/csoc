@@ -19,11 +19,18 @@ function global_($phrase)
     'DEGREES'       => 'درجات',
     'DEGREE/RANK'   => 'درجة/رتبة',
 
+    // global words
+    '#UNITS'              => 'عدد الوحدات',
+    '#SPECS'              => 'عدد التخصصات',
+    '#SOLDIERS'           => 'عدد الجنود',
+    '#OFFICERS'           => 'عدد الضباط',
+
     // navbar words
     'SECOND'                  => 'ثانية',
     'REFRESH SESSION'         => 'تحديث الجلسة',
     'DASHBOARD'               => 'الصفحة الرئيسية',
     'UNITS'                   => 'الوحدات',
+    'UNITS TYPES'             => 'انواع الوحدات',
     'ADD UNIT'                => 'اضافة وحدة جديدة',
     'SOLDIERS'                => 'الجنود',
     'ADD SOLDIER'             => 'اضافة جندى جديد',
@@ -37,6 +44,7 @@ function global_($phrase)
     'QUERY PROBLEM'     => 'حدثت مشكلة اثناء حفظ البيانات',
 
     // tables words
+    'NOTE'      => 'الملاحظات',
     'CONTROL'   => 'الاجراء',
 
   );

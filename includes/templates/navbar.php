@@ -45,6 +45,11 @@
           </a>
         </li>
         <li>
+          <a href="<?php echo $nav_up_level ?>units/index.php?do=unit-types">
+            <span class="link-name"><?php echo lang('UNITS TYPES') ?></span>
+          </a>
+        </li>
+        <li>
           <a href="<?php echo $nav_up_level ?>units/index.php?do=add-new-unit">
             <span class="link-name"><?php echo lang('ADD UNIT') ?></span>
           </a>

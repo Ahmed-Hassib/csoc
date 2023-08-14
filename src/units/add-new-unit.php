@@ -54,10 +54,10 @@
           <label for="unit-address"><?php echo lang("UNIT ADDRESS", "units") ?></label>
         </div>
 
-        <div class="form-buttons">
-          <button class="btn btn-primary ms-auto" type="submit"><?php echo lang('ADD') ?></button>
-        </div>
       </section>
+      <div class="form-buttons">
+        <button class="btn btn-primary ms-auto" type="submit"><?php echo lang('ADD') ?></button>
+      </div>
     </form>
   </section>
 </div>

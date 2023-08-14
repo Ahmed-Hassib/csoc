@@ -2,7 +2,7 @@
 // create a new object of Unit class
 $unit_obj = isset($unit_obj) ? $unit_obj : new Unit();
 // get unit id
-$unit_id = isset($_GET['unit_id']) && !empty($_GET['unit_id']) ? $_GET['unit_id'] : null;
+$unit_id = isset($_GET['unit_id']) && !empty($_GET['unit_id']) ? base64_decode($_GET['unit_id']) : null;
 // get unit data
 $unit_data = $unit_obj->get_unit_info($unit_id);
 // check if data exists
@@ -14,7 +14,7 @@ if ($unit_id !== null && $unit_data !== null) {
     </header>
     <section class="units-content">
       <form class="add-new" action="?do=update-unit" method="POST">
-        <input type="hidden" class="hidden-input" id="unit-id" name="unit-id" value="<?php echo $unit_data['unit_id'] ?>" required>
+        <input type="hidden" class="hidden-input" id="unit-id" name="unit-id" value="<?php echo base64_encode($unit_data['unit_id']) ?>" required>
         <section class="form-content">
           <!-- unit name -->
           <div class="form-floating">
@@ -64,14 +64,14 @@ if ($unit_id !== null && $unit_data !== null) {
             <label for="unit-address"><?php echo lang("UNIT ADDRESS", "units") ?></label>
           </div>
 
-          <div class="form-buttons">
-            <button class="btn btn-primary ms-auto" type="submit"><?php echo lang('SAVE') ?></button>
-            <a href="?do=delete-unit&unit_id=<?php echo $unit['unit_id'] ?>" class="btn btn-danger">
-              <?php echo lang('DELETE') ?>
-              <i class="bi bi-trash"></i>
-            </a>
-          </div>
         </section>
+        <div class="form-buttons">
+          <button class="btn btn-success ms-auto" type="submit"><?php echo lang('SAVE') ?></button>
+          <button type="button" onclick="confirm_delete('?do=delete-unit&unit_id=<?php echo base64_encode($unit_data['unit_id']) ?>')" class="btn btn-danger">
+            <?php echo lang('DELETE') ?>
+            <i class=" bi bi-trash"></i>
+          </button>
+        </div>
       </form>
     </section>
   </div>

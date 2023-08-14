@@ -11,14 +11,24 @@
 }
 
 /** FOR ADD NEW PAGE **/
-.units-content .form-content {
+.units-content .form-content:not(:has(.form-content-normal)) {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 10px 10px;
 }
 
+.units-content .form-content.form-content-normal {
+	grid-template-columns: 70% 30% !important;
+}
+
+.units-content .section-content {
+	display: grid;
+	grid-template-columns: 60% 40%;
+	gap: 10px 10px;
+}
+
 .units-content
-	.form-content
+	.form-content:not(:has(.form-content-normal))
 	> .form-floating:nth-child(even):not(
 		:has(.hidden-input),
 		:is(:nth-child(1), :nth-child(2), :nth-child(3))
@@ -27,7 +37,7 @@
 }
 
 .units-content
-	.form-content
+	.form-content:not(:has(.form-content-normal))
 	> .form-floating:nth-child(odd):not(
 		:has(.hidden-input),
 		:is(:nth-child(1), :nth-child(2), :nth-child(3))
@@ -35,11 +45,16 @@
 	grid-column: 2/4;
 }
 
-.units-content .form-content > .form-buttons {
-	grid-column: 3/4;
-	justify-self: end;
+.units-content .form-buttons {
+	position: relative;
+	margin-top: 1rem;
+	text-align: end;
 }
 
-.units-content .form-content > .form-buttons .btn {
+.units-content .form-buttons .btn {
 	min-width: 100px;
+}
+
+.units-buttons {
+	padding: 0.75rem 0;
 }

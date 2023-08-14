@@ -38,14 +38,14 @@
   <?php $global_web_js_files = get_page_dependencies("" . $page_category . "_global", 'js'); ?>
 
   <?php foreach ($global_web_js_files as $js_file) { ?>
-    <script src="<?php echo $js . $dependencies_folder . $js_file; ?>"></script>
+    <script src="<?php echo $js . $js_file; ?>"></script>
   <?php } ?>
 <?php } ?>
 
 <?php $page_role_js_files = get_page_dependencies($page_role, 'js'); ?>
 
 <?php foreach ($page_role_js_files as $js_file) { ?>
-  <script src="<?php echo $js . $dependencies_folder . $js_file; ?>"></script>
+  <script src="<?php echo $js . $js_file; ?>"></script>
 <?php } ?>
 
 <?php if (isset($preloader) && $preloader == true) { ?>

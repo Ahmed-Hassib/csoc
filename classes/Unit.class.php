@@ -21,7 +21,6 @@ class Unit extends Database
   {
     // select query
     $query = "SELECT * FROM `units` WHERE `unit_id` = ? LIMIT 1";
-    // check if user exist in database
     $stmt = $this->con->prepare($query);
     $stmt->execute(array($id));
     $unit_info = $stmt->fetch();
@@ -35,7 +34,6 @@ class Unit extends Database
   {
     // select query
     $query = "SELECT * FROM `units`";
-    // check if user exist in database
     $stmt = $this->con->prepare($query);
     $stmt->execute();
     $units_info = $stmt->fetchAll();
@@ -49,7 +47,6 @@ class Unit extends Database
   {
     // insert query
     $query = "INSERT INTO `units` (`unit_name`, `unit_address`, `unit_type`, `unit_leader_rank`, `unit_leader_name`) VALUES (?, ?, ?, ?, ?);";
-    // check if user exist in database
     $stmt = $this->con->prepare($query);
     $stmt->execute($info);
     $count = $stmt->rowCount();
@@ -62,7 +59,6 @@ class Unit extends Database
   {
     // update query
     $query = "UPDATE `units` SET `unit_name` = ?, `unit_address` = ?, `unit_type` = ?, `unit_leader_rank` = ?, `unit_leader_name` = ? WHERE `unit_id` = ?";
-    // check if user exist in database
     $stmt = $this->con->prepare($query);
     $stmt->execute($info);
     $count = $stmt->rowCount();
@@ -75,7 +71,69 @@ class Unit extends Database
   {
     // delete query
     $query = "DELETE FROM `units`  WHERE `unit_id` = ?";
-    // check if user exist in database
+    $stmt = $this->con->prepare($query);
+    $stmt->execute(array($id));
+    $count = $stmt->rowCount();
+    // check the count
+    return $count > 0 ? true : null;
+  }
+  
+  // function to get type`s info
+  public function get_type_info($id)
+  {
+    // select query
+    $query = "SELECT * FROM `unit_types` WHERE `id` = ? LIMIT 1";
+    $stmt = $this->con->prepare($query);
+    $stmt->execute(array($id));
+    $type_info = $stmt->fetch();
+    $count = $stmt->rowCount();
+    // check the count
+    return $count > 0 ? $type_info : null;
+  }
+
+  // function to get all type`s info
+  public function get_all_types_info()
+  {
+    // select query
+    $query = "SELECT * FROM `unit_types`";
+    $stmt = $this->con->prepare($query);
+    $stmt->execute();
+    $units_info = $stmt->fetchAll();
+    $count = $stmt->rowCount();
+    // check the count
+    return $count > 0 ? $units_info : null;
+  }
+
+  // function to insert new type`s info
+  public function insert_new_type($info)
+  {
+    // insert query
+    $query = "INSERT INTO `unit_types` (`type_name`) VALUES (?);";
+    $stmt = $this->con->prepare($query);
+    $stmt->execute($info);
+    $count = $stmt->rowCount();
+    // check the count
+    return $count > 0 ? true : null;
+  }
+
+  // function to update type`s info
+  public function update_type($info)
+  {
+    // update query
+    $query = "UPDATE `unit_types` SET `type_name` = ? WHERE `id` = ?";
+    // check if type exist in database
+    $stmt = $this->con->prepare($query);
+    $stmt->execute($info);
+    $count = $stmt->rowCount();
+    // check the count
+    return $count > 0 ? true : null;
+  }
+  
+  // function to delete type`s info
+  public function delete_type($id)
+  {
+    // delete query
+    $query = "DELETE FROM `unit_types`  WHERE `id` = ?";
     $stmt = $this->con->prepare($query);
     $stmt->execute(array($id));
     $count = $stmt->rowCount();

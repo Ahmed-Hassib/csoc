@@ -3,7 +3,7 @@
 // check request method
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // get request data for unit
-  $unit_id      = trim($_POST['unit-id'], '');
+  $unit_id      = isset($_POST['unit-id']) && !empty($_POST['unit-id']) ? base64_decode($_POST['unit-id']) : null;
   $unit_name    = trim($_POST['unit-name'], '');
   $unit_type    = trim($_POST['unit-type'], '');
   $unit_phone   = trim($_POST['unit-phone'], '');
@@ -17,37 +17,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $err_arr = array();
 
   // check unit name
-  if (empty($unit_name) || empty($unit_id)) {
-    $err_arr[] = 'unit name is requird';
+  if (empty($unit_name) || empty($unit_id) || $unit_id === null) {
+    $err_arr[] = 'unit name is required';
   }
 
   // check unit type
   if (empty($unit_type)) {
-    $err_arr[] = 'unit type is requird';
+    $err_arr[] = 'unit type is required';
   }
 
   // check unit leader rank
   if (empty($unit_leader_rank)) {
-    $err_arr[] = 'leader rank is requird';
+    $err_arr[] = 'leader rank is required';
   }
 
   // check unit leader name
   if (empty($unit_leader_name)) {
-    $err_arr[] = 'leader name is requird';
+    $err_arr[] = 'leader name is required';
   }
 
   // check if array of errors empty or not
   if (empty($err_arr)) {
     // create an object of Unit class
     $unit_obj = new Unit();
-    // insert new unit
-    $is_updated = $unit_obj->update_unit(array($unit_name, $unit_address, $unit_type, $unit_leader_rank, $unit_leader_name, $unit_id));
-    // prepare flash session variables
-    $_SESSION['flash_message'] = 'UPDATED';
-    $_SESSION['flash_message_icon'] = 'bi-check2-circle-fill';
-    $_SESSION['flash_message_class'] = 'success';
-    $_SESSION['flash_message_status'] = true;
-    $_SESSION['flash_message_lang_file'] = 'units';
+    // check if id exists
+    if ($unit_obj->is_exist("`unit_id`", "`units`", $unit_id)) {
+      // insert new unit
+      $is_updated = $unit_obj->update_unit(array($unit_name, $unit_address, $unit_type, $unit_leader_rank, $unit_leader_name, $unit_id));
+      // prepare flash session variables
+      $_SESSION['flash_message'] = 'UPDATED';
+      $_SESSION['flash_message_icon'] = 'bi-check2-circle-fill';
+      $_SESSION['flash_message_class'] = 'success';
+      $_SESSION['flash_message_status'] = true;
+      $_SESSION['flash_message_lang_file'] = 'units';
+    } else {
+      // prepare flash session variables
+      $_SESSION['flash_message'] = 'NO DATA';
+      $_SESSION['flash_message_icon'] = 'bi-exclamation-triangle-fill';
+      $_SESSION['flash_message_class'] = 'danger';
+      $_SESSION['flash_message_status'] = false;
+      $_SESSION['flash_message_lang_file'] = 'global_';
+    }
   } else {
     foreach ($err_arr as $key => $err) {
       // prepare flash session variables

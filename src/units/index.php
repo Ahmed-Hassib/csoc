@@ -19,8 +19,6 @@ $level = 2;
 $nav_level = 1;
 // language file
 $lang_file = "units";
-// pre configration of system
-include_once str_repeat("../", $level) . "etc/pre-conf.php";
 // check session
 if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
   // check if Get request do is set or not
@@ -29,6 +27,7 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
   if ($query == 'manage') {
     // dashboard file
     $file_name = 'dashboard.php';
+    $is_contain_table = true;
   } elseif ($query == 'add-new-unit') {
     // add new unit file
     $file_name = 'add-new-unit.php';
@@ -41,6 +40,12 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
   } elseif ($query == 'update-unit') {
     // update unit file
     $file_name = 'update-unit.php';
+  } elseif ($query == 'delete-unit') {
+    // delete unit file
+    $file_name = 'delete-unit.php';
+  } elseif ($query == 'unit-types') {
+    // unit-types file
+    $file_name = 'unit-types.php';
   } else {
     // null for access denied
     $file_name = null;
@@ -50,6 +55,8 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
   $file_name = null;
 }
 
+// pre configration of system
+include_once str_repeat("../", $level) . "etc/pre-conf.php";
 // initial configration of system
 include_once str_repeat("../", $level) . "etc/init.php";
 

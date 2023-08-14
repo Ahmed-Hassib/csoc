@@ -2,7 +2,7 @@
 // check Soldier class object was created or not
 $soldier_obj = isset($soldier_obj) ? $soldier_obj : new Soldier();
 // get soldier id
-$soldier_id = isset($_GET['soldier_id']) && !empty($_GET['soldier_id']) ? intval($_GET['soldier_id']) : null;
+$soldier_id = isset($_GET['soldier_id']) && !empty($_GET['soldier_id']) ? base64_decode($_GET['soldier_id']) : null;
 // check soldier id
 if ($soldier_id !== null) {
   // get soldier data
@@ -14,7 +14,7 @@ if ($soldier_id !== null) {
     </header>
     <section class="soldiers-content">
       <form class="add-new" action="?do=update-soldier" method="POST" onchange="form_validation(this)" id="add-new-soldier">
-        <input type="hidden" name="id" value="<?php echo $soldier_data['id'] ?>">
+        <input type="hidden" name="id" value="<?php echo base64_encode($soldier_data['id']) ?>">
         <section class="form-content">
           <header>
             <h4 class="h4"><?php echo lang('MILITIRY INFO', 'soldiers') ?></h4>
@@ -102,8 +102,8 @@ if ($soldier_id !== null) {
           <div class="form-floating">
             <select class="form-select" id="religion" name="religion" required>
               <option value="default" disabled selected><?php echo lang("RELIGION", "soldiers") ?></option>
-              <option value="0" <?php echo $soldier_data['religion'] == '0' ? 'selectde' : '' ?>><?php echo lang("MUSLIM", "soldiers") ?></option>
-              <option value="1" <?php echo $soldier_data['religion'] == '1' ? 'selectde' : '' ?>><?php echo lang("CHRISTIAN", "soldiers") ?></option>
+              <option value="0" <?php echo $soldier_data['religion'] == '0' ? 'selected' : '' ?>><?php echo lang("MUSLIM", "soldiers") ?></option>
+              <option value="1" <?php echo $soldier_data['religion'] == '1' ? 'selected' : '' ?>><?php echo lang("CHRISTIAN", "soldiers") ?></option>
             </select>
             <label for="religion"><?php echo lang("RELIGION", "soldiers") ?></label>
           </div>
@@ -150,7 +150,11 @@ if ($soldier_id !== null) {
         </section>
         <!-- form button -->
         <div class="form-buttons">
-          <button class="btn btn-primary ms-auto" type="submit"><?php echo lang('SAVE') ?></button>
+          <button class="btn btn-success ms-auto" type="submit"><?php echo lang('SAVE') ?></button>
+          <button type="button" onclick="confirm_delete('?do=delete-soldier&soldier_id=<?php echo base64_encode($soldier_data['id']) ?>')" class="btn btn-danger">
+            <?php echo lang('DELETE') ?>
+            <i class=" bi bi-trash"></i>
+          </button>
         </div>
       </form>
     </section>

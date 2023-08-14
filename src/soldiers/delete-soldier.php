@@ -1,13 +1,15 @@
 <?php
 
 // get soldier info
-$soldier_id = trim($_GET['soldier_id'], '');
+$soldier_id = isset($_GET['soldier_id']) && !empty($_GET['soldier_id']) ? base64_decode($_GET['soldier_id']) : null;
+// possible back
+$is_back = isset($_GET['is_back']) && !empty($_GET['is_back']) ? 'back' : null;
 
 // empty array for errors
 $err_arr = array();
 
 // validate military number field
-if (empty($soldier_id)) {
+if (empty($soldier_id) || $soldier_id === null) {
   $err_arr[] = 'query problem';
 }
 
@@ -35,4 +37,4 @@ if (empty($err_arr)) {
 }
 
 // redirect back
-redirect_home(null, 'back', 0);
+redirect_home(null, $is_back, 0);

@@ -9,13 +9,14 @@ $soldier_data = $soldier_obj->get_all_soldiers_info();
     <h3 class="h3"><?php echo lang('SOLDIERS DASHBOARD', 'soldiers') ?></h3>
   </header>
   <!-- strst users table -->
-  <table class="table table-bordered display compact table-style" style="width:100%">
+  <table class="table table-bordered table-striped display compact table-style" style="width:100%">
     <thead class="primary text-capitalize">
       <tr>
         <th style="max-width: 20px">#</th>
         <th><?php echo lang('MILITIRY NUMBER', 'soldiers') ?></th>
         <th><?php echo lang('NATIONAL ID', 'soldiers') ?></th>
         <th><?php echo lang('SOLDIER NAME', 'soldiers') ?></th>
+        <th><?php echo lang('SPECIALIZATION', 'soldiers') ?></th>
         <th><?php echo lang('BASIC UNIT', 'soldiers') ?></th>
         <th><?php echo lang('CURRENT UNIT', 'soldiers') ?></th>
         <th style="width: 100px"><?php echo lang('CONTROL') ?></th>
@@ -29,6 +30,12 @@ $soldier_data = $soldier_obj->get_all_soldiers_info();
             <td><?php echo $soldier['militiry_number'] ?></td>
             <td><?php echo $soldier['national_id'] ?></td>
             <td><?php echo $soldier['name'] ?></td>
+            <td>
+              <?php $soldier_spec = $soldier_obj->select_specific_column("`spec_name`", "`specialization`", "WHERE `spec_id` = " . $soldier['specialization'])[0]['spec_name']; ?>
+              <span title="<?php echo $soldier_spec; ?>">
+                <?php echo $soldier_spec; ?>
+              </span>
+            </td>
             <td>
               <?php
               $basic_unit_data = $soldier_obj->select_specific_column("`unit_name`, `unit_leader_rank`, `unit_leader_name`", "`units`", "WHERE `unit_id` = " . $soldier['basic_unit'])[0];
@@ -52,12 +59,12 @@ $soldier_data = $soldier_obj->get_all_soldiers_info();
               </span>
             </td>
             <td>
-              <a href="?do=edit-soldier&soldier_id=<?php echo $soldier['id'] ?>" class="btn btn-outline-success fs-12 py-1">
+              <a href="?do=edit-soldier&soldier_id=<?php echo base64_encode($soldier['id']) ?>" class="btn btn-outline-success fs-12 py-1">
                 <i class="bi bi-pencil-square"></i>
               </a>
-              <a href="?do=delete-soldier&soldier_id=<?php echo $soldier['id'] ?>" class="btn btn-danger fs-12 py-1">
+              <button type="button" onclick="confirm_delete('?do=delete-soldier&soldier_id=<?php echo base64_encode($soldier['id']) ?>&is_back=true')" class="btn btn-danger fs-12 py-1">
                 <i class="bi bi-trash"></i>
-              </a>
+              </button>
             </td>
           </tr>
         <?php } ?>

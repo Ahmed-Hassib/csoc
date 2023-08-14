@@ -3,7 +3,7 @@
 // check request method
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // get soldier info
-  $soldier_id     = trim($_GET['id'], '');
+  $soldier_id     = isset($_POST['id']) && !empty($_POST['id']) ? base64_decode($_POST['id']) : null;
   $militiry_num   = trim($_POST['militiry-number'], '');
   $rank           = trim($_POST['soldier-rank'], '');
   $soldier_name   = trim($_POST['soldier-name'], '');
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $err_arr = array();
 
   // validate military number field
-  if (empty($militiry_num) || empty($soldier_id)) {
+  if (empty($militiry_num) || $soldier_id === null) {
     $err_arr[] = 'militiry cannot be empty';
   }
 

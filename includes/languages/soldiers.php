@@ -6,6 +6,7 @@
 function soldiers($phrase)
 {
   static $lang = array(
+    'SOLDIER'   => 'جندى',
     'SOLDIERS'  => 'الجنود',
     'SOLDIERS DASHBOARD' => 'الصفحة الرئيسية للجنود',
 

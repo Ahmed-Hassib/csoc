@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $err_arr = array();
 
   // validate military number field
-  if (empty($militiry_num) || empty($soldier_id)) {
+  if (empty($militiry_num)) {
     $err_arr[] = 'militiry cannot be empty';
   }
 

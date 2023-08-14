@@ -3,7 +3,7 @@
 $lang_files = [
     'global',
     'login', 'dashboard', 'units',
-    'soldiers'
+    'specializations', 'soldiers',
 ];
 
 // loop on language files

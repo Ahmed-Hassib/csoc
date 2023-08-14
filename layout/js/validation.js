@@ -39,11 +39,6 @@ function form_validation(form = null, btn = null) {
           break;
       }
     }
-
-
-    // if (input.getAttribute('type') == "redio") {
-    //   console.log(input.checked);
-    // }
   })
 
   // loop on selects

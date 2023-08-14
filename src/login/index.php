@@ -15,7 +15,7 @@ if (isset($_SESSION['user_id'])) {
       </div>
     </div>
     <!-- login form -->
-    <form class="login_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+    <form class="login_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" onchange="form_validation(this)">
       <!-- username -->
       <div class="mb-3 form-floating">
         <input type="text" class="form-control" id="username" name="username" placeholder="linke admin..."

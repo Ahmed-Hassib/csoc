@@ -1,3 +1,8 @@
+html,
+body {
+	height: 100% !important;
+}
+
 /************/
 .login_container {
 	padding: 1rem 0.5rem;
@@ -28,8 +33,8 @@
 .content_box .avatar_container .avatar_box {
 	position: absolute;
 	top: -50px;
-		left: 50%;
-		transform: translate(-50%, -50%);
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .content_box .avatar_container .avatar_box .bi {
@@ -58,16 +63,16 @@
 	top: 50%;
 	left: 5%;
 	transform: translate(-50%, -50%);
-		cursor: pointer;
+	cursor: pointer;
 }
 
 .astrisk {
 	position: absolute;
-		top: 10%;
-		left: 10px;
+	top: 10%;
+	left: 10px;
 }
 
 .btn-close-alert {
 	position: absolute;
-		left: 5%;
+	left: 5%;
 }

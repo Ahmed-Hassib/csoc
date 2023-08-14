@@ -79,14 +79,6 @@ body[dir="rtl"] .form-floating > label {
 }
 
 /************/
-.form-floating > .form-control-plaintext ~ label,
-.form-floating > .form-control:focus ~ label,
-.form-floating > .form-control:not(:placeholder-shown) ~ label,
-.form-floating > .form-select ~ label {
-	transform: scale(0.85) translateY(-0.5rem) translateX(17%) !important;
-}
-
-/************/
 .alert-flash-container {
 	margin: auto !important;
 	position: absolute;
@@ -194,6 +186,13 @@ input[type="number"] {
 	-webkit-appearance: textfield;
 }
 
+.form-floating > .form-control-plaintext ~ label,
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+	transform: scale(0.85) translateY(-0.5rem) translateX(17%) !important;
+}
+
 .form-control.is-valid,
 .was-validated .form-control:valid,
 .form-control.is-invalid,
@@ -220,3 +219,4 @@ input[type="number"] {
 	background-position: left 0.75rem center !important;
 }
 
+/************/

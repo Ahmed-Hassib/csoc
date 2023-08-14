@@ -1,10 +1,17 @@
 var inputs = document.getElementsByTagName("input");
 var selects = document.getElementsByTagName("select");
+var cards_nums = document.querySelectorAll(".nums .num");
+
 
 (function () {
   // add astrisk
   add_astrisk(selects);
   add_astrisk(inputs);
+
+  // check if cards of nums not empty
+  if (cards_nums != null) {
+    cards_nums.forEach((element) => start_count(element));
+  }
 })()
 
 
@@ -53,3 +60,31 @@ function show_pass(btn) {
   }
 }
 
+/**
+ * start_count function
+ * start count from 0 to the target goal
+ */
+function start_count(el) {
+  let goal = el.dataset.goal;
+  let count = setInterval(() => {
+    // check if goal not equal zero
+    if (goal != 0) {
+      el.textContent++;
+    }
+    // condition to check the stop point
+    if (el.textContent == goal) {
+      clearInterval(count);
+    }
+  }, 2000 / goal);
+}
+
+/**
+ * confirm_delete function
+ * accepts forward url to go after confirm delete
+ */
+function confirm_delete(url) {
+  // check if user really want to delete
+  if (!confirm('هل انت متأكد؟')) return;
+  // if want to delete redirect page to target url
+  window.location.href = url;
+}

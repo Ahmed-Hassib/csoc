@@ -65,7 +65,7 @@ class Unit extends Database
     // check the count
     return $count > 0 ? true : null;
   }
-  
+
   // function to delete unit`s info
   public function delete_unit($id)
   {
@@ -77,7 +77,7 @@ class Unit extends Database
     // check the count
     return $count > 0 ? true : null;
   }
-  
+
   // function to get type`s info
   public function get_type_info($id)
   {
@@ -105,30 +105,41 @@ class Unit extends Database
   }
 
   // function to insert new type`s info
-  public function insert_new_type($info)
+  public function insert_new_type($type)
   {
     // insert query
     $query = "INSERT INTO `unit_types` (`type_name`) VALUES (?);";
     $stmt = $this->con->prepare($query);
-    $stmt->execute($info);
+    $stmt->execute(array($type));
     $count = $stmt->rowCount();
     // check the count
     return $count > 0 ? true : null;
   }
 
   // function to update type`s info
-  public function update_type($info)
+  public function update_type($type, $id)
   {
     // update query
     $query = "UPDATE `unit_types` SET `type_name` = ? WHERE `id` = ?";
     // check if type exist in database
     $stmt = $this->con->prepare($query);
-    $stmt->execute($info);
+    $stmt->execute(array($type, $id));
     $count = $stmt->rowCount();
     // check the count
     return $count > 0 ? true : null;
   }
-  
+
+  public function reset_units_types($id)
+  {
+    // delete query
+    $query = "UPDATE `units` SET `unit_type` = -1 WHERE `unit_type` = ?";
+    $stmt = $this->con->prepare($query);
+    $stmt->execute(array($id));
+    $count = $stmt->rowCount();
+    // check the count
+    return $count > 0 ? true : null;
+  }
+
   // function to delete type`s info
   public function delete_type($id)
   {

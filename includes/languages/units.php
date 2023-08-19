@@ -27,9 +27,16 @@ function units($phrase)
     'LEADER RANK IS REQUIRED'   => 'رتبة قائد الوحدة مطلوبة',
     'LEADER NAME IS REQUIRED'   => 'اسم قائد الوحدة مطلوب',
 
+    // units operations
     'INSERTED'        => 'تم اضافة بيانات الوحدة بنجاح',
     'UPDATED'         => 'تم تعديل بيانات الوحدة بنجاح',
     'DELETED'         => 'تم حذف بيانات الوحدة بنجاح',
+    
+    // units types operations
+    'TYPE INSERTED'        => 'تم اضافة بيانات نوع الوحدة بنجاح',
+    'TYPE INSERTED ALL'    => 'تم اضافة جميع بيانات انواع الوحدات بنجاح',
+    'TYPE UPDATED'         => 'تم تعديل بيانات نوع الوحدة بنجاح',
+    'TYPE DELETED'         => 'تم حذف بيانات نوع الوحدة بنجاح',
 
   );
   // return the phrase

@@ -3,7 +3,7 @@
     <h3 class="h3 text-capitalize"><?php echo lang('UNITS TYPES') ?></h3>
   </header>
   <section class="units-content">
-    <form class="add-new-type" action="?do=insert-type" method="POST" onchange="form_validation(this)" id="add-new-type">
+    <form class="add-new-type" action="?do=unit-types&action=insert-type" method="POST" onchange="form_validation(this)" id="add-new-type">
       <section class="form-content" id="units-form-content">
         <div class="section-content">
           <!-- unit-type name -->

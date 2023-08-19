@@ -43,5 +43,5 @@ if ($type_id !== null && $type_data !== null) {
   $_SESSION['flash_message_status'] = false;
   $_SESSION['flash_message_lang_file'] = 'global_';
   // redirect back
-  redirect_home(null, 'back', 0);
+  redirect_home(null, null, 0);
 }
